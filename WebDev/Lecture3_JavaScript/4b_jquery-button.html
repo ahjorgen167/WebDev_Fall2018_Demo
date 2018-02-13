@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <button id="helloButton">HOVER HERE TO SAY HELLO!</button>
+        <script>
+            // here I am using jQuery to grab a tag based on the id (note the # sign, like we use in CSS)
+            // then we can modify the behavior.  Here the hover tags ask us for functions to call
+            // when we enter and leave the tag.
+            //
+            // Note here thaht we are passing functions as variables.  This is a powerful aspect of JS and we refer to
+            // it as a callback.  We will get more into this in the coming weeks.
+            $('#helloButton').hover(hello, goodbye);
+
+            function hello() {
+                alert("hello!");
+            }
+
+            function goodbye() {
+                alert("goodbye");
+            }
+
+        </script>
+
+
+    </body>
+
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <!-- Here I am importing jQuery (stored locally, but again we can use a CDN) -->
+        <!-- jQuery is the most popular JavaScript library and simplifies a lot of existing for us -->
+        <script src="jquery-3.3.1.min.js"></script>
+
+    </head>
+
+    <body>
+        <div id="hello">HELLO</div>
+
+        <div class="hellos">1</div>
+        <div class="hellos">2</div>
+        <div class="hellos">3</div>
+        <div class="jj">
+            Below I am using jquery
+        </div>
+        <script>
+            // jQuery is instantiated with the $ variable.  Here is I am inserting some strings after the class tag
+            $('<span>HELLO</span><span>GOODBYE</span>').insertAfter(('.jj'));
+
+        </script>
+
+    </body>
+
+</html>

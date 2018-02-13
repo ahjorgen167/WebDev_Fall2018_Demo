@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="jquery-3.3.1.min.js"></script>
+    </head>
+
+    <body>
+        <ul id="colors">
+
+        </ul>
+    <script>
+        // Here again I am able to grab a tag with jquery and do some logic with it.
+        var colors = ["Red", "Green", "Blue", "Black"];
+        var colorList = $("#colors");
+        for(var s = 0; s < colors.length; s++)
+        {
+            var colorLi = $("<li>");
+            var colorName = colors[s];
+            colorLi.append(colorName);
+            colorList.prepend(colorLi);
+        }
+
+    </script>
+
+    </body>
+
+
+</html>

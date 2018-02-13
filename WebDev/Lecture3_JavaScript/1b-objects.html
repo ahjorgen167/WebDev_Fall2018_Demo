@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>
+            Introduction to JavaScript
+        </title>
+
+        <script>
+            // If we want to store complex data in JS easily, we can use an Object
+
+            var obj = {};
+            // You can access (set or get) attributes with brackets or dots
+            // There are minor differences to both approaches, but it is best to be consistent
+            obj["banana"] = "banana";
+
+            obj.hope = "song";
+            obj.blork = 1231;
+            obj["seret_object"] = {
+                jorb: "glorb"
+            };
+            console.log(obj);
+
+            // If you want to be really fancy, you can also make classes in JavaScript.  While
+            // we will touch on classes as we get to TypeScript, you are not expected to use classes here
+            // Note that I am setting one of the attributes as a function
+            function Animal(name, race, color) {
+                this.name = name;
+                this.race = race;
+                this.color = color;
+
+                this.getDescription = function() {
+                    return this.name + " " + this.race + " " + this.color;
+                }
+            }
+
+            var dog = new Animal("Joe", "SmallDog", "Black");
+
+            console.log(dog.getDescription());
+
+            // Objects are usually referred to as JSON
+            var hello = "hello";
+            var hunter = {
+                height: 10,
+                haircolor: "blonde",
+                woring: true
+            };
+
+            alert(JSON.stringify(hunter));
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

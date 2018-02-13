@@ -1,0 +1,24 @@
+<html>
+    <body>
+
+
+        <input id="message">
+        <button onclick="sayMessage()">CLICK ME!!!</button>
+
+    </body>
+    <script>
+
+        function sayMessage() {
+            // the DOM can also provide as with details on the page.  Here we are identifying an HTML tag on its Id (similar
+            // to how we would with CSS)
+            // and then get the input value
+            var message = document.getElementById('message').value;
+            alert(message);
+        }
+
+    </script>
+
+
+
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+
+    <body>
+        <!-- Several HTML tags allow us to point tags to the JavaScript directly -->
+        <!-- Here when there is an 'onclick' action, this calls the whereOnPage function (defined below) -->
+        <!-- Additionally, there is also an optional 'event' variable that can provide the state of the event -->
+        <button onclick="whereOnPage(event)">
+
+            Click again, please
+
+        </button>
+
+
+    </body>
+
+    <script>
+        // Here, the onclick event is the mouse click the button.  We can extract details, such as where the mouse
+        // pointer is on the page at the time of the click
+        function whereOnPage(event) {
+            alert(event.screenX + ", " + event.screenY);
+        }
+
+    </script>
+
+</html>

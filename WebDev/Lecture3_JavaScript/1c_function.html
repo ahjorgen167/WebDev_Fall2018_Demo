@@ -1,0 +1,29 @@
+<html>
+    <body>
+
+        <script>
+            var firstnum = 100;
+            var secondnum = 200;
+
+
+            // Here is how to intialize a simple function
+            // Note that functions can accept and return arguemnts
+            function add_and_display(first, second) {
+                alert(first + second);
+            }
+
+            add_and_display(firstnum, secondnum);
+
+            // Also note that functions can be instantiated into variables
+            // You can then pass arguments as functions.  This will be more important later
+            var addANDdisplay = function (first, second) {
+                alert(first + second);
+            };
+            addANDdisplay(firstnum, secondnum);
+
+        </script>
+
+    </body>
+
+
+</html>

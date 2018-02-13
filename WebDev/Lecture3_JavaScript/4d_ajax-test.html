@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <input id="jobName">
+        <button id="jobSearch" onclick="searchJobs()">Search for Jobs</button>
+        <ul id="jobs">
+
+        </ul>
+    
+    <script>
+
+        // This was our final demonstration from class and a peak at what's coming in the coming weeks.
+
+        $("#jobSearch").click()
+
+        function searchJobs() {
+            var input = $("#jobName").val();
+            var url = "https://jobs.github.com/positions.json?description=" +
+                input + "&location=seattle";
+            searchQuery(url);
+
+        }
+
+        function searchQuery(url) {
+            var jobsList = $("#jobs");
+
+            // Here I am calling jQuery with the $ symbol, but instead of grabbing an HTML tag, I am using the AJAX
+            // functionality.  AJAX is a function within jQuery that lets us make requests to servers over the internet
+            // Here we are making a GET request, which is something we will cover in the coming weeks.  But basically,
+            // it is making a request for data and will not be altering that data at all.
+            // in the get function, it takes 4 arguments
+            //  --the url of where we want to getdata
+            //  --a header (notice that I am just passing an empty header here, but often I need to fill this with
+            //    security information
+            //  --a callback function.  One I get the data from the server I am contacting, I may want to do something with
+            //    it.  The response is the data I get from the internet.  I need to be careful with the data,
+            //    as data from other websites can come in a variety of formats
+            //  --the data type.  I am using JSONP, partly to get a JSON back, but also because this is a hacky way
+            //    to overcome some security issues that come when running this code locally
+            $.get(
+                url,
+                {},
+                function(response) {
+                    var jobs = response;
+                    for (var i = 0; i < jobs.length; i++) {
+                        var jobsLi = $("<li>");
+                        var jobName = jobs[i].title;
+                        jobsLi.append(jobName);
+                        jobsList.prepend(jobsLi);
+                    }
+                },
+                "jsonp"
+            )
+        }
+
+    </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+    <body>
+        <script>
+            // Another data type in JS is the list
+
+            var list = [12, 23, 11, 59];
+
+            // A list can hold multiple datatypes (unlike Java)
+            var varied_list = ["one hundred", 11, true];
+
+
+            // Some important functions of the list are push (add to the end of the list)
+            // pop() (remove and return the last element in the list)
+            varied_list.push("bob");
+            varied_list.pop();
+
+            // The slice method is a good way to get a subset of the list, but does not alter the list
+            // The first argument is inclusive, the second is not, so the following method will return ["one hundred"]
+            alert(varied_list.slice(0, 1));
+            alert(varied_list);
+        </script>
+
+    </body>
+
+</html>
