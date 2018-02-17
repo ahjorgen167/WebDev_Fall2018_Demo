@@ -1,0 +1,11 @@
+<p>
+  widget-gif works!
+</p>
+
+
+<input [(ngModel)]="searchString">
+<button (click)="searchGif(searchString)">Search</button>
+
+<div *ngIf="!!gifLink">
+  <img [src]="gifLink">
+</div>

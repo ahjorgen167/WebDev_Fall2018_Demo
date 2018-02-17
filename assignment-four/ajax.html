@@ -1,0 +1,58 @@
+<html>
+<head>
+  <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<input id="jobName">
+<button id="jobSearch" onclick="searchJobs()">Search for Jobs</button>
+<ul id="jobs">
+
+</ul>
+
+<script>
+
+  // This was our final demonstration from class and a peak at what's coming in the coming weeks.
+
+  $("#jobSearch").click()
+
+  function searchJobs() {
+    //var input = $("#jobName").val();
+    //var url = "https://jobs.github.com/positions.json?description=" + input + "&location=seattle";
+    var url = "https://jobs.github.com/positions.json?description=javascript&location=seattle";
+    searchQuery(url);
+  }
+
+  function searchQuery(url) {
+    var jobsList = $("#jobs");
+
+    var jobs = null;
+
+    $.get(
+      url,
+      {},
+      function(response) {
+        alert("first");
+        jobs = response;
+        //for (var i = 0; i < jobs.length; i++) {
+        //    var jobsLi = $("<li>");
+        //    var jobName = jobs[i].title;
+        //    jobsLi.append(jobName);
+        //    jobsList.prepend(jobsLi);
+        //}
+      },
+      "jsonp"
+    );
+    for(var i = 0; i < jobs.length; i++) {
+      alert(jobs[i]);
+    }
+
+
+
+    alert("second");
+  }
+
+</script>
+
+</body>
+
+</html>
